@@ -15,8 +15,8 @@ for image in ${images[@]} ; do
     echo "==> docker pull $namespace/${image_name_tag[0]}"
     docker pull $namespace/${image_name_tag[0]}
     echo "==> docker tag $namespace/${image_name_tag[0]} k8s.gcr.io/$image"
-    docker tag $namespace/${image_name_tag[0]} k8s.gcr.io/$image
- #   echo "==> docker rmi $namespace/${image_name_tag[0]}"
- #   docker rmi $namespace/${image_name_tag[0]}
+    docker tag  $namespace/${image_name_tag[0]} k8s.gcr.io/$image
+    echo "==> docker rmi $namespace/${image_name_tag[0]}"
+    docker rmi  $namespace/${image_name_tag[0]}
 done
 docker images
